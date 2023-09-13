@@ -1,0 +1,318 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>/*body{
+        margin: 0;
+        padding: 0;
+        height: 1oovh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }*/
+    .slider{
+        width: 1024px;
+        height: 500px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;
+    }
+    .slides{
+        width: 500%;
+        height: 500px;
+        display: flex;
+    }
+    .slides input{
+        display: none;
+    }
+    .slide{
+        width: 20%;
+        transition: 2s;
+    
+    }
+    .slide .sl{
+        width: 1024px;
+        height: 500px;
+    }
+    .navigation-manual{
+        position: absolute;
+        width: 1024px;
+        margin-top:-60px;
+        display: flex;
+        justify-content: center;
+    }
+    .manual-btn{
+        border: 2px solid #40D3DC;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0s;
+    }
+    .manual-btn:not(:last-child){
+        margin-right:40px
+    }
+    .manual-btn:hover{
+        background:#40D3DC ;
+    }
+    #radio1:checked ~ .first{
+        margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+        margin-left: -20%;
+    }
+    #radio3:checked ~ .first{
+        margin-left: -40%;
+    }
+    #radio4:checked ~ .first{
+        margin-left: -60%;
+    }
+    #radio5:checked ~ .first{
+        margin-left: -80%;
+    }
+    #radio6:checked ~ .first{
+        margin-left: -100%;
+    }
+    #radio7:checked ~ .first{
+        margin-left: -120%;
+    }
+    #radio8:checked ~ .first{
+        margin-left: -140%;
+    }
+    .navigation-auto{
+        position: absolute;
+        display: flex;
+        width: 1024px;
+        justify-content: center;
+        margin-top: 440px;
+    }
+    .navigation-auto #auto-btn{
+        border: 2px solid #40D3DC;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 0s;
+    }
+    .navigation-auto #auto-btn:not(:last-child){
+        margin-right: 40px;
+    }
+    #radio1:checked ~ .navigation-auto .auto-btn1{
+        background: #40d3dc;
+    }
+    #radio2:checked ~ .navigation-auto .auto-btn2{
+        background: #40d3dc;
+    }
+    #radio3:checked ~ .navigation-auto .auto-btn3{
+        background: #40d3dc;
+    }
+    #radio4:checked ~ .navigation-auto .auto-btn4{
+        background: #40d3dc;
+    }
+    #radio5:checked ~ .navigation-auto .auto-btn5{
+        background: #40d3dc;
+    }
+    #radio6:checked ~ .navigation-auto .auto-btn6{
+        background: #40d3dc;
+    }
+    #radio7:checked ~ .navigation-auto .auto-btn7{
+        background: #40d3dc;
+    }
+    #radio8:checked ~ .navigation-auto .auto-btn8{
+        background: #40d3dc;
+    }
+    @media only screen and (max-width:720px){
+        .slider {
+            padding-left: 0px;
+            width: 373px;
+            height: 195px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: auto;
+    
+        }
+    
+        .slides {
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+    
+        .slider .slides .slide .sl {
+            width: 373px;
+            height: 195px;
+            display: inline-block;
+        }
+    
+        .slide {
+            width: 20%;
+            transition: 2s;
+    
+        }
+    
+        .navigation-manual {
+            width: 373px;
+            margin-top: -322px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 10px;
+        } 
+        .manual-btn:not(:last-child){
+            margin-right:10px
+        }
+        #radio1:checked ~ .first{
+            margin-left: 0;
+        }
+        #radio2:checked ~ .first{
+            margin-left: -20%;
+        }
+        #radio3:checked ~ .first{
+            margin-left: -40%;
+        }
+        #radio4:checked ~ .first{
+            margin-left: -60%;
+        }
+        #radio5:checked ~ .first{
+            margin-left: -80%;
+        }
+        #radio6:checked ~ .first{
+            margin-left: -100%;
+        }
+        #radio7:checked ~ .first{
+            margin-left: -120%;
+        }
+        #radio8:checked ~ .first{
+            margin-left: -140%;
+        }
+        .navigation-auto{
+            position: absolute;
+            display: flex;
+            width: 373px;
+            justify-content: center;
+            margin-top: 178px;
+        }
+        .navigation-auto #auto-btn{
+            border: 2px solid #40D3DC;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 0s;
+        }
+        .navigation-auto #auto-btn:not(:last-child){
+            margin-right: 10px;
+        }
+        #radio1:checked ~ .navigation-auto .auto-btn1{
+            background: #40d3dc;
+        }
+        #radio2:checked ~ .navigation-auto .auto-btn2{
+            background: #40d3dc;
+        }
+        #radio3:checked ~ .navigation-auto .auto-btn3{
+            background: #40d3dc;
+        }
+        #radio4:checked ~ .navigation-auto .auto-btn4{
+            background: #40d3dc;
+        }
+        #radio5:checked ~ .navigation-auto .auto-btn5{
+            background: #40d3dc;
+        }
+        #radio6:checked ~ .navigation-auto .auto-btn6{
+            background: #40d3dc;
+        }
+        #radio7:checked ~ .navigation-auto .auto-btn7{
+            background: #40d3dc;
+        }
+        #radio8:checked ~ .navigation-auto .auto-btn8{
+            background: #40d3dc;
+        }
+        .biglogo{
+            padding-left: 152px;
+            width: 90px;
+            display: block;
+        }
+        h5{
+            padding-top: 14px;
+            padding-left: 45px;
+            font-size: medium;
+        }
+    }</style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="highlight">
+        <div class="media">
+            <h2 class="mda">𝐏𝐇𝐎𝐓𝐎𝐒&𝐇𝐈𝐆𝐇𝐋𝐈𝐆𝐇𝐓</h2>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio5">
+                <input type="radio" name="radio-btn" id="radio6">
+                <input type="radio" name="radio-btn" id="radio7">
+                <input type="radio" name="radio-btn" id="radio8">
+                <div class="slide first">
+                    <img src="{%static 'sl1.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl2.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl3.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl4.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl5.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl6.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl7.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="slide">
+                    <img src="{%static 'sl8.jpg'%}"  alt="" class="sl">
+                </div>
+                <div class="navigation-auto">
+                    <div id="auto-btn" class="auto-btn1"></div>
+                    <div id="auto-btn" class="auto-btn2"></div>
+                    <div id="auto-btn" class="auto-btn3"></div>
+                    <div id="auto-btn" class="auto-btn4"></div>
+                    <div id="auto-btn" class="auto-btn5"></div>
+                    <div id="auto-btn" class="auto-btn6"></div>
+                    <div id="auto-btn" class="auto-btn7"></div>
+                    <div id="auto-btn" class="auto-btn8"></div>
+                </div>
+            </div>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+                <label for="radio6" class="manual-btn"></label>
+                <label for="radio7" class="manual-btn"></label>
+                <label for="radio8" class="manual-btn"></label>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+var counter = 1;
+setInterval(function () {
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if (counter > 8) {
+        counter = 1;
+
+    }
+}, 5000);
+</script>
+</body>
+
+</html>
